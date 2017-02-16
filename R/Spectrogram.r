@@ -261,8 +261,8 @@ SamplingFrequency = Audio$fs
 } # End "if Audio is of class 'sound'"
 
 if( AudioClass=="Wave"){ # From 'tuneR' package
-IsStereo = attributes(Wave)$stereo
-if(IsStereo){ Samples = ( attributes(Audio)$left + attributes(Wave)$right ) / 2
+IsStereo = attributes(Audio)$stereo
+if(IsStereo){ Samples = ( attributes(Audio)$left + attributes(Audio)$right ) / 2
        }else{ Samples = attributes(Audio)$left # Recall that 'attributes(Wave)$right' is 'numeric(0)' if a mono file is being dealt with
 } # End 'if/else is stereo'
 SamplingFrequency = attributes(Audio)$samp.rate
